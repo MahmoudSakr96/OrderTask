@@ -15,9 +15,6 @@ namespace GlobalApp.Demo.Application
     {
         public static void ConfigureApplicationServices1(this IServiceCollection services)
         {
-
-            //services.AddScoped<IOrderAppService, OrderAppService>();
-            //services.AddScoped<IDepartmentAppService, DepartmentAppService>();
         }
     }
 }

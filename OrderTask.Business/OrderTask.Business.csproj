@@ -7,18 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Profiler\AutoMapperConfiguration.cs" />
-    <Compile Remove="Profiler\MappingExtensions.cs" />
-    <Compile Remove="Profiler\MappingProfile.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Profiler\AutoMapperConfiguration.cs" />
-    <None Include="Profiler\MappingExtensions.cs" />
-    <None Include="Profiler\MappingProfile.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
   </ItemGroup>

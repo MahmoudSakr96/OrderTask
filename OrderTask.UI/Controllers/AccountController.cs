@@ -41,7 +41,6 @@ namespace OrderTask.UI.Controllers
         }
         public ActionResult Login()
         {
-            var auth = this.User.Identity.IsAuthenticated;
             return View();
         }
 
@@ -54,7 +53,6 @@ namespace OrderTask.UI.Controllers
 
                 if (user != null)
                 {
-                    var auth = this.User.Identity.IsAuthenticated;
                     return Redirect("/home");
                 }
                 else

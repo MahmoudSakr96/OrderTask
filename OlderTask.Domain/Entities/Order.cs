@@ -25,8 +25,5 @@ namespace OlderTask.Domain.Entities
         public int Phone { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 
-
-
-
     }
 }

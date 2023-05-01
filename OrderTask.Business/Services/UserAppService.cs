@@ -16,7 +16,6 @@ namespace OrderTask.Business.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-
         private readonly DataProtectorTokenProvider<ApplicationUser> _dataProtectorTokenProvider;
         private readonly PhoneNumberTokenProvider<ApplicationUser> _phoneNumberTokenProvider;
         private readonly RoleManager<ApplicationRole> _roleManager;

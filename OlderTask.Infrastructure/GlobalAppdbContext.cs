@@ -38,13 +38,11 @@ namespace OlderTask.Infrastructure
             modelBuilder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable(name: "Users"
-                //, schema: "PORTAL"
                 );
             });
             modelBuilder.Entity<ApplicationRole>(entity =>
             {
                 entity.ToTable(name: "Roles"
-                //, schema: "PORTAL"
                 );
             });
 

@@ -64,7 +64,6 @@ namespace OrderTask.UI.Controllers
         public async Task<ActionResult> EditAsync(int id)
         {
             var order = await _orderAppService.GetByIdAsync(id);
-            //order.Date = OrderController.ConvertDateCalendar(order.Date, "Hijri", "en-US");
             return View(order);
         }
 
