@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Profiler\AutoMapperConfiguration.cs" />
+    <Compile Remove="Profiler\MappingExtensions.cs" />
+    <Compile Remove="Profiler\MappingProfile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Profiler\AutoMapperConfiguration.cs" />
+    <None Include="Profiler\MappingExtensions.cs" />
+    <None Include="Profiler\MappingProfile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OlderTask.Domain\OrderTask.Domain.csproj" />
+    <ProjectReference Include="..\OlderTask.Infrastructure\OrderTask.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

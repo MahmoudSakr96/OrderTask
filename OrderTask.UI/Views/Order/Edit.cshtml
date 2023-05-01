@@ -1,0 +1,65 @@
+﻿@model OrderTask.Business.Dto.OrderDto
+@{
+    ViewBag.Title = "Edit Order Header";
+}
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+            <div class="mask" style="padding-top: 58px;">
+                <div id="form-content">
+                <h2 style ="text-align:center">Edit Order Header</h2>
+                <div class="row ">
+                    <div class="col-lg-7 mx-auto">
+                        <div class="card mt-2 mx-auto p-4 bg-light">
+                            <div class="card-body bg-light">
+                                <div class="container">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <div class="form-horizontal"   border-radius: 5px !important;
+                                        background-color: #f2f2f2 !important;
+                                        padding: 20px !important;
+                                    >
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(x => x.CustomerName, new { @class = "control-label col-md-2" })
+                                                <div class="col-md-12">
+                                                    @Html.TextBoxFor(x => x.CustomerName, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(x => x.CustomerName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>        
+                                            <div class="form-group">
+                                                @Html.LabelFor(x => x.Date, new { @class = "control-label col-md-2" })
+                                                <div class="col-md-12">
+                                                        @Html.EditorFor(x => x.Date, new { htmlAttributes = new { @class = "form-control" }})
+                                                    @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(x => x.Address, new { @class = "control-label col-md-2" })
+                                                <div class="col-md-12">
+                                                    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(x => x.Phone, new { @class = "control-label col-md-2" })
+                                                <div class="col-md-12">
+                                                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" ,@type = "number"})
+                                                    @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                <div class="col-md-offset-2 col-md-12 p-2 d-flex justify-content-center" id="submit">
+                                                    <input type="submit" value="Edit" class="btn btn-success btn-send  pt-2 btn-block" style="width: fit-content;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

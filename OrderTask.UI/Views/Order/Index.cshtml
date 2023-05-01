@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OrderTask.Business.Dto.OrderDto>
+
+@{  
+    ViewBag.Title = "Order List";  
+}  
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+        <div class="mask" style="padding-top: 58px;">
+            <div style="text-align:center">
+                <h2>Order List</h2>
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="table-responsive bg-white">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Order No</th>
+                                        <th scope="col">Customer Name</th>
+                                        <th scope="col">Order Date</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Operations</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var emp in Model)
+                                {
+                                    <tr>
+                                        <th scope="row" style="color: #666666;">@Html.DisplayFor(x => emp.Id)</th>
+                                        <td>@Html.DisplayFor(x => emp.CustomerName)</td>
+                                        <td>@Html.DisplayFor(x => emp.HijriDate)</td>
+                                        <td>@Html.DisplayFor(x => emp.Address)</td>
+                                        <td>@Html.DisplayFor(x => emp.Phone)</td>
+                                        <td>
+                                            <ul class="list-inline m-0">
+                                                <li class="list-inline-item " data-toggle="tooltip" data-placement="top" title="Details">
+                                                        @Html.ActionLink("", "Index", "OrderDetails", new { id = emp.Id}, new {@class="btn btn-info fa fa-table" })
+                                                </li>
+                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        @Html.ActionLink("", "Edit", new { id = emp.Id }, new {@class="btn btn-info fa fa-edit" })
+                                                </li>
+                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        @Html.ActionLink("", "Delete", new { id = emp.Id }, new {@class="btn btn-info fa fa-trash" })
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                 }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+﻿@model OrderTask.Business.Dto.OrderDto
+
+@{  
+    ViewBag.Title = "Order Details List";  
+}
+<div class="gradient-custom-1 h-100">
+
+    <div class="mask" style="padding-top: 58px;">
+        <div style="text-align:center">
+
+                <h2>Order Details</h2>
+                <p>
+                    @Html.ActionLink("Create New", "Create", new { id = Model.Id})
+                </p>
+        </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="table-responsive bg-white">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Item No</th>
+                                    <th scope="col">Item Description</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Total</th>
+                                        <th scope="col">Operations</th>
+                                    </tr>
+                                </thead>
+                                    @foreach (var emp in Model.OrderDetails)
+                                    {
+                                        <tr>
+                                            <th scope="row" style="color: #666666;">
+                                                        @Html.DisplayFor(x => emp.ItemNo)
+                                            </th>
+                                            <td>
+                                                @Html.DisplayFor(x => emp.ItemDescription)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(x => emp.Quantity)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(x => emp.Price)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(x => emp.Total)
+                                            </td>
+                                            <td>
+                                            <ul class="list-inline m-0">
+                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                    @Html.ActionLink("", "Edit", new { id = emp.Id }, new {@class="btn btn-info fa fa-edit" })
+                                                </li>
+                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                   @Html.ActionLink("", "Delete", new { id = emp.Id }, new {@class="btn btn-info fa fa-trash" })
+                                                </li>
+                                            </ul>                     
+                                            </td>
+                                        </tr>
+                                    }
+                                </tr>  
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
