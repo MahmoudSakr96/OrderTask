@@ -34,8 +34,8 @@ namespace OrderTask.UI.Controllers
         [Authorize]
         public async Task<ActionResult> Index(int id)
         {
-            var order = await _orderDetailsAppService.GetAllByOrderIdAsync(id);
-            return View(order);
+            var orderDetail = await _orderDetailsAppService.GetAllByOrderIdAsync(id);
+            return View(orderDetail);
         }
 
         [Authorize]
@@ -62,8 +62,8 @@ namespace OrderTask.UI.Controllers
         [Authorize]
         public async Task<ActionResult> EditAsync(int id)
         {
-            var order = await _orderDetailsAppService.GetByIdAsync(id);
-            return View(order);
+            var orderDetail = await _orderDetailsAppService.GetByIdAsync(id);
+            return View(orderDetail);
         }
 
         [Authorize]
@@ -73,7 +73,7 @@ namespace OrderTask.UI.Controllers
             if (ModelState.IsValid)
             {
                 model.Total = model.Quantity * model.Price;
-                var order = await _orderDetailsAppService.UpdateAsync(model);
+                var orderDetail = await _orderDetailsAppService.UpdateAsync(model);
                 return RedirectToAction("Index", new { id = model.OrderId });
             }
 
@@ -84,15 +84,15 @@ namespace OrderTask.UI.Controllers
         public async Task<ActionResult> DetailAsync(int id)
         {
 
-            var order = await _orderDetailsAppService.GetByIdAsync(id);
-            return View(order);
+            var orderDetail = await _orderDetailsAppService.GetByIdAsync(id);
+            return View(orderDetail);
         }
 
         [Authorize]
         public async Task<ActionResult> DeleteAsync(int id)
         {
-            var order = await _orderDetailsAppService.DeleteByIdAsync(id);
-            return RedirectToAction("Index");
+            var orderDetail = await _orderDetailsAppService.DeleteByIdAsync(id);
+            return RedirectToAction("Index", new { id = orderDetail.OrderId });
         }
 
 

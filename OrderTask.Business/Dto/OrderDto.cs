@@ -14,9 +14,8 @@ namespace OrderTask.Business.Dto
         [Required(ErrorMessage = "Please enter Customer Name"), MaxLength(100)]
         public string CustomerName { get; set; }
 
-        //[Required(ErrorMessage = "Please enter Order Date")]
         public DateTime Date { get; set; }
-        public string HijriDate { get; set; }
+        public string? HijriDate { get; set; }
 
         [Required(ErrorMessage = "Please enter your address"), MaxLength(500)]
         public string Address { get; set; }
